@@ -27,7 +27,11 @@ const LoginPage = () => {
           userRef.set(newUser);
           console.log('New user data created:', newUser);
         }
-        router.push('/dashboard'); // Redirect to dashboard
+        // Save access token to local storage
+        user.getIdToken().then((token) => {
+          localStorage.setItem('accessToken', token);
+          router.push('/dashboard'); // Redirect to dashboard
+        });
       });
     } catch (error) {
       console.error('Error logging in:', error);
