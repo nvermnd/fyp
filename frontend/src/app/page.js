@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link"; // Import Link from next/link
 import { FaFingerprint, FaShieldAlt, FaMobileAlt } from "react-icons/fa";
 import { MdSecurity, MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 
@@ -6,10 +7,22 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="w-full bg-white shadow-md">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex items-center">
+        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <FaFingerprint className="text-4xl text-blue-600" />
             <h1 className="text-3xl font-bold text-gray-900">Smart Recognition</h1>
+          </div>
+          <div className="flex space-x-4">
+            <Link href="/login" legacyBehavior>
+              <a className="bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 text-lg font-semibold">
+                Log In
+              </a>
+            </Link>
+            <Link href="/signup" legacyBehavior>
+              <a className="bg-gray-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-gray-700 transition duration-300 text-lg font-semibold">
+                Sign Up
+              </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -46,6 +59,25 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold mb-2 text-gray-900">IoT Integration</h3>
                 <p className="text-gray-700">Seamless integration with IoT devices and systems.</p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Authentication Section */}
+        <div className="bg-white py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Authentication</h2>
+            <div className="flex justify-center space-x-4">
+              <Link href="/login" legacyBehavior>
+                <a className="bg-blue-600 text-white px-8 py-4 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 text-lg font-semibold">
+                  Log In
+                </a>
+              </Link>
+              <Link href="/signup" legacyBehavior>
+                <a className="bg-gray-600 text-white px-8 py-4 rounded-full shadow-lg hover:bg-gray-700 transition duration-300 text-lg font-semibold">
+                  Sign Up
+                </a>
+              </Link>
             </div>
           </div>
         </div>
